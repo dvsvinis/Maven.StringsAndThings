@@ -1,9 +1,11 @@
 package io.zipcoder;
-
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 /**
  * @author tariq
  */
+@SuppressWarnings("MagicConstant")
 public class StringsAndThings {
 
     /**
@@ -15,8 +17,17 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int count = 0;
+
+        for (String word : input.split(" ")) {
+
+            if (word.endsWith("y")  || word.endsWith("z")) {
+                count++;
+            }
+        }
+        return count;
     }
+
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
