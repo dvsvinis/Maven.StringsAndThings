@@ -85,9 +85,6 @@ public class StringsAndThings {
             isCount++;
         }
 
-
-        System.out.println("No of *is* in the input is : " + isCount);
-        System.out.println("No of *not* in the input is : " + notCount);
         Boolean result = (isCount == notCount);
         return result;
     }
@@ -101,8 +98,24 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        boolean result = false;
+
+        for(int i = 1; i < input.length() - 1; i++){
+            if(input.charAt(i) == 'g') {
+                if ((input.charAt(i - 1) == 'g') || (input.charAt(i + 1) == 'g')) {
+                result = true;
+                }
+            }
+        }
+        return result;
     }
+
+
+
+
+
+
+
 
 
     /**
