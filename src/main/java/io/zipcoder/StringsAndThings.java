@@ -62,13 +62,36 @@ public class StringsAndThings {
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
      * to the number of appearances of "not" anywhere in the string (case sensitive)
      *
-     * example : containsEqualNumberOfIsAndNot("This is not")  // Should return false
+     * example : containsEqualNumberOfIsAndNot("This is not")  // Should return false **TRUE
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        String strFind = "not";
+        String strFind2 = "is";
+        int isCount = 0;
+        int notCount = 0;
+        int index = 0;
+        int index2 = 0;
+
+        while ((index = input.indexOf(strFind, index)) != -1)
+        {
+            index++;
+            notCount++;
+        }
+        while ((index2 = input.indexOf(strFind2, index2)) != -1)
+        {
+            index2++;
+            isCount++;
+        }
+
+
+        System.out.println("No of *is* in the input is : " + isCount);
+        System.out.println("No of *not* in the input is : " + notCount);
+        Boolean result = (isCount == notCount);
+        return result;
     }
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
